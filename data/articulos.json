@@ -1,0 +1,226 @@
+{
+  "articulos": [
+    {
+      "id": 1,
+      "titulo": "Biodiversidad y Conservación en Chile",
+      "contenido": "Chile alberga una extraordinaria diversidad biológica debido a su geografía única. Con más de 5,000 especies de plantas vasculares, nuestro país es considerado un hotspot de biodiversidad mundial. La conservación de estos ecosistemas es fundamental para mantener el equilibrio ecológico y proteger especies endémicas como la palma chilena y el copihue.",
+      "categoria": "biodiversidad",
+      "fecha_publicacion": "2025-01-06",
+      "semana": 1
+    },
+    {
+      "id": 2,
+      "titulo": "Ecosistemas Únicos de Chile",
+      "contenido": "Desde el desierto de Atacama hasta los bosques templados de la Patagonia, Chile presenta una variedad increíble de ecosistemas. Los bosques esclerófilos del centro del país, los bosques valdiviano y las formaciones de alta montaña constituyen refugios únicos para la flora nativa, muchas de las cuales no se encuentran en ningún otro lugar del mundo.",
+      "categoria": "ecosistemas",
+      "fecha_publicacion": "2025-01-13",
+      "semana": 2
+    },
+    {
+      "id": 3,
+      "titulo": "Especies Nativas en Peligro",
+      "contenido": "Muchas de nuestras especies vegetales nativas enfrentan amenazas debido al cambio climático, la urbanización y la introducción de especies exóticas. El quillay, la araucaria y el alerce son ejemplos de especies que requieren protección urgente. Conocer y valorar nuestra flora nativa es el primer paso para su conservación.",
+      "categoria": "conservacion",
+      "fecha_publicacion": "2025-01-20",
+      "semana": 3
+    },
+    {
+      "id": 4,
+      "titulo": "El Impacto del Cambio Climático en Chile",
+      "contenido": "Chile es especialmente vulnerable al cambio climático. El aumento de temperaturas, la disminución de precipitaciones y el derretimiento de glaciares están afectando nuestros ecosistemas. Es crucial implementar medidas de adaptación y mitigación para proteger nuestra biodiversidad única.",
+      "categoria": "cambio_climatico",
+      "fecha_publicacion": "2025-01-27",
+      "semana": 4
+    },
+    {
+      "id": 5,
+      "titulo": "Agricultura Sostenible en Chile",
+      "contenido": "La agricultura sostenible combina técnicas tradicionales con innovación tecnológica para producir alimentos sin dañar el medio ambiente. En Chile, prácticas como la rotación de cultivos, el uso de abonos orgánicos y la conservación del suelo están ganando terreno.",
+      "categoria": "agricultura",
+      "fecha_publicacion": "2025-02-03",
+      "semana": 5
+    },
+    {
+      "id": 6,
+      "titulo": "Energías Renovables: El Futuro de Chile",
+      "contenido": "Chile tiene un potencial excepcional para las energías renovables. Con abundante radiación solar en el norte, fuertes vientos en el sur y recursos geotérmicos, nuestro país puede convertirse en líder regional en energía limpia y sostenible.",
+      "categoria": "energia",
+      "fecha_publicacion": "2025-02-10",
+      "semana": 6
+    },
+    {
+      "id": 7,
+      "titulo": "Protección de los Océanos Chilenos",
+      "contenido": "Nuestras costas albergan una rica biodiversidad marina. Las áreas marinas protegidas, como el Parque Marino Francisco Coloane, son fundamentales para conservar especies como ballenas, delfines y aves marinas. La pesca sostenible es clave para el futuro de nuestros océanos.",
+      "categoria": "oceanos",
+      "fecha_publicacion": "2025-02-17",
+      "semana": 7
+    },
+    {
+      "id": 8,
+      "titulo": "El Valor de los Humedales",
+      "contenido": "Los humedales son ecosistemas esenciales que actúan como filtros naturales, controlan inundaciones y albergan una gran diversidad de especies. En Chile, humedales como el Santuario de la Naturaleza Carlos Anwandter son vitales para la conservación de aves migratorias.",
+      "categoria": "ecosistemas",
+      "fecha_publicacion": "2025-02-24",
+      "semana": 8
+    },
+    {
+      "id": 9,
+      "titulo": "Reducción de Residuos: Hacia una Economía Circular",
+      "contenido": "La economía circular busca minimizar los residuos y maximizar el uso de recursos. En Chile, iniciativas como la Ley REP (Responsabilidad Extendida del Productor) promueven el reciclaje y la reutilización de materiales, contribuyendo a un futuro más sostenible.",
+      "categoria": "sostenibilidad",
+      "fecha_publicacion": "2025-03-03",
+      "semana": 9
+    },
+    {
+      "id": 10,
+      "titulo": "Parques Nacionales: Guardianes de la Biodiversidad",
+      "contenido": "Chile cuenta con 41 parques nacionales que protegen más del 20% del territorio nacional. Estos espacios no solo conservan la biodiversidad, sino que también proporcionan servicios ecosistémicos esenciales como la regulación del clima y la purificación del agua.",
+      "categoria": "areas_protegidas",
+      "fecha_publicacion": "2025-03-10",
+      "semana": 10
+    },
+    {
+      "id": 11,
+      "titulo": "El Rol de los Polinizadores",
+      "contenido": "Las abejas, mariposas y otros polinizadores son fundamentales para la reproducción de muchas plantas y la producción de alimentos. En Chile, la conservación de estos insectos es crucial para mantener la biodiversidad y la seguridad alimentaria.",
+      "categoria": "ecosistemas",
+      "fecha_publicacion": "2025-03-17",
+      "semana": 11
+    },
+    {
+      "id": 12,
+      "titulo": "Agua: Un Recurso Precioso",
+      "contenido": "Chile enfrenta desafíos importantes en la gestión del agua. La escasez hídrica, especialmente en el norte del país, requiere medidas urgentes para conservar este recurso vital. La eficiencia en el uso del agua y la protección de las fuentes naturales son prioridades.",
+      "categoria": "recursos_naturales",
+      "fecha_publicacion": "2025-03-24",
+      "semana": 12
+    },
+    {
+      "id": 13,
+      "titulo": "Especies Invasoras: Una Amenaza Silenciosa",
+      "contenido": "Las especies exóticas invasoras pueden desplazar a las especies nativas y alterar ecosistemas completos. En Chile, especies como el visón americano y el castor representan una amenaza para nuestra biodiversidad única. La prevención y control son esenciales.",
+      "categoria": "conservacion",
+      "fecha_publicacion": "2025-03-31",
+      "semana": 13
+    },
+    {
+      "id": 14,
+      "titulo": "Educación Ambiental: Formando Ciudadanos Responsables",
+      "contenido": "La educación ambiental es fundamental para crear conciencia sobre la importancia de proteger nuestro planeta. En Chile, programas educativos en escuelas y comunidades promueven valores de conservación y sostenibilidad desde temprana edad.",
+      "categoria": "educacion",
+      "fecha_publicacion": "2025-04-07",
+      "semana": 14
+    },
+    {
+      "id": 15,
+      "titulo": "Turismo Sostenible en Chile",
+      "contenido": "El turismo sostenible puede ser una herramienta poderosa para la conservación. En Chile, iniciativas como el ecoturismo en parques nacionales y reservas privadas generan ingresos para las comunidades locales mientras protegen la biodiversidad.",
+      "categoria": "turismo",
+      "fecha_publicacion": "2025-04-14",
+      "semana": 15
+    },
+    {
+      "id": 16,
+      "titulo": "El Bosque Nativo: Pulmón de Chile",
+      "contenido": "Los bosques nativos de Chile son esenciales para la regulación del clima, la conservación del suelo y el hábitat de innumerables especies. La protección y restauración de estos ecosistemas es crucial para el futuro del país.",
+      "categoria": "bosques",
+      "fecha_publicacion": "2025-04-21",
+      "semana": 16
+    },
+    {
+      "id": 17,
+      "titulo": "Contaminación Atmosférica: Un Problema Urbano",
+      "contenido": "Las ciudades chilenas enfrentan desafíos importantes de contaminación atmosférica. Medidas como la restricción vehicular, la promoción del transporte público y la mejora de la eficiencia energética son fundamentales para mejorar la calidad del aire.",
+      "categoria": "contaminacion",
+      "fecha_publicacion": "2025-04-28",
+      "semana": 17
+    },
+    {
+      "id": 18,
+      "titulo": "La Importancia de las Semillas Nativas",
+      "contenido": "Las semillas nativas son el patrimonio genético de Chile. Conservar estas variedades es esencial para mantener la diversidad agrícola y adaptarse a los cambios climáticos. Los bancos de semillas y los guardianes de semillas juegan un rol crucial.",
+      "categoria": "agricultura",
+      "fecha_publicacion": "2025-05-05",
+      "semana": 18
+    },
+    {
+      "id": 19,
+      "titulo": "Eficiencia Energética en el Hogar",
+      "contenido": "Pequeños cambios en nuestros hogares pueden tener un gran impacto en el consumo energético. Desde usar bombillas LED hasta mejorar el aislamiento, cada acción cuenta para reducir nuestra huella de carbono y ahorrar energía.",
+      "categoria": "energia",
+      "fecha_publicacion": "2025-05-12",
+      "semana": 19
+    },
+    {
+      "id": 20,
+      "titulo": "El Futuro de la Movilidad Sostenible",
+      "contenido": "El transporte es responsable de una gran parte de las emisiones de gases de efecto invernadero. En Chile, la promoción del transporte público, las bicicletas y los vehículos eléctricos es fundamental para reducir la contaminación y mejorar la calidad de vida.",
+      "categoria": "transporte",
+      "fecha_publicacion": "2025-05-19",
+      "semana": 20
+    }
+  ],
+  "datos_curiosos": [
+    {
+      "id": 1,
+      "titulo": "Dato Curioso de la Semana",
+      "contenido": "¿Sabías que el alerce (Fitzroya cupressoides) puede vivir más de 3.600 años, convirtiéndolo en uno de los árboles más longevos del mundo? Estos gigantes silenciosos han sido testigos de la historia de Chile desde mucho antes de la llegada de los españoles. ¡Un solo alerce puede haber vivido más que toda la civilización occidental!",
+      "semana": 1
+    },
+    {
+      "id": 2,
+      "titulo": "Dato Curioso de la Semana",
+      "contenido": "¿Sabías que Chile tiene el desierto más árido del mundo? El Desierto de Atacama puede pasar años sin recibir lluvia, pero cuando llueve, se transforma en un espectáculo de flores que cubren el paisaje con colores vibrantes. Este fenómeno se conoce como 'Desierto Florido' y es único en el mundo.",
+      "semana": 2
+    },
+    {
+      "id": 3,
+      "titulo": "Dato Curioso de la Semana",
+      "contenido": "¿Sabías que el copihue, la flor nacional de Chile, es una enredadera que puede crecer hasta 10 metros de altura? Sus flores rojas, blancas o rosadas son polinizadas por colibríes y abejorros, y solo florecen una vez al año, generalmente entre marzo y julio.",
+      "semana": 3
+    },
+    {
+      "id": 4,
+      "titulo": "Dato Curioso de la Semana",
+      "contenido": "¿Sabías que Chile tiene la mayor población de pingüinos de Humboldt del mundo? Estas aves marinas, que no pueden volar, viven principalmente en las costas del norte de Chile y Perú. Son excelentes nadadores y pueden bucear hasta 150 metros de profundidad.",
+      "semana": 4
+    },
+    {
+      "id": 5,
+      "titulo": "Dato Curioso de la Semana",
+      "contenido": "¿Sabías que la palma chilena (Jubaea chilensis) puede vivir más de 1.000 años y alcanzar alturas de hasta 30 metros? Esta especie endémica de Chile central produce frutos comestibles llamados 'coquitos' que son muy apreciados por su sabor dulce.",
+      "semana": 5
+    },
+    {
+      "id": 6,
+      "titulo": "Dato Curioso de la Semana",
+      "contenido": "¿Sabías que Chile tiene uno de los cielos más limpios del mundo para la observación astronómica? El Desierto de Atacama alberga algunos de los observatorios más importantes del planeta, como el Very Large Telescope (VLT) y el futuro Extremely Large Telescope (ELT).",
+      "semana": 6
+    },
+    {
+      "id": 7,
+      "titulo": "Dato Curioso de la Semana",
+      "contenido": "¿Sabías que el quillay (Quillaja saponaria) produce una sustancia natural llamada saponina que se usa como detergente natural? Los pueblos originarios de Chile usaban esta planta para lavar ropa y como jabón, y hoy se utiliza en la industria cosmética y farmacéutica.",
+      "semana": 7
+    },
+    {
+      "id": 8,
+      "titulo": "Dato Curioso de la Semana",
+      "contenido": "¿Sabías que Chile tiene la mayor reserva de agua dulce del mundo en forma de glaciares? Los campos de hielo patagónicos contienen más del 80% de los glaciares de Sudamérica y son una fuente vital de agua para el país y la región.",
+      "semana": 8
+    },
+    {
+      "id": 9,
+      "titulo": "Dato Curioso de la Semana",
+      "contenido": "¿Sabías que el huemul, el ciervo nacional de Chile, es una de las especies más amenazadas del país? Solo quedan alrededor de 1.500 ejemplares en estado silvestre, principalmente en la Patagonia. Es un símbolo de la conservación en Chile.",
+      "semana": 9
+    },
+    {
+      "id": 10,
+      "titulo": "Dato Curioso de la Semana",
+      "contenido": "¿Sabías que Chile es uno de los países con mayor diversidad de especies de cactus del mundo? En el norte del país se pueden encontrar más de 200 especies diferentes de cactus, muchas de ellas endémicas y adaptadas a las condiciones extremas del desierto.",
+      "semana": 10
+    }
+  ]
+} 

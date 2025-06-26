@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Semanal - Plantalingo</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="config.js"></script>
+  <script src="js/dataManager.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Quiz Semanal - Plantalingo</h1>
+  </header>
+
+  <div class="quiz-container">
+    <button onclick="goBack()" class="btn-regresar">⬅ Volver al Inicio</button>
+    
+    <div id="quiz">
+      <div class="question" id="question">Cargando pregunta...</div>
+      <div class="options" id="options"></div>
+      <div class="result" id="result"></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Plantalingo</p>
+  </footer>
+
+  <script src="quiz.js"></script>
+</body>
+</html>
