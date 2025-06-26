@@ -326,7 +326,7 @@ function mostrarError(mensaje) {
 }
 
 function goBack() {
-    window.location.href = "inicio.html";
+    window.location.href = "index.html";
 }
 
 // Inicializar el quiz cuando se carga la página
