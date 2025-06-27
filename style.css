@@ -861,3 +861,95 @@ footer p {
   font-size: 2rem;
   margin-right: 10px;
 }
+
+/* Estilos para respuestas detalladas del quiz */
+.respuestas-detalladas {
+  margin-top: 30px;
+  padding: 20px;
+  background: linear-gradient(145deg, #f8fffe 0%, #ffffff 100%);
+  border-radius: 15px;
+  border: 1px solid rgba(76, 175, 80, 0.2);
+}
+
+.respuestas-detalladas h3 {
+  color: #2d5a2f;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.respuesta-item {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  border-left: 4px solid;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.respuesta-item.correcta {
+  border-left-color: #4CAF50;
+  background: linear-gradient(135deg, #f1f8e9 0%, #ffffff 100%);
+}
+
+.respuesta-item.incorrecta {
+  border-left-color: #f44336;
+  background: linear-gradient(135deg, #ffebee 0%, #ffffff 100%);
+}
+
+.respuesta-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.numero-pregunta {
+  font-weight: 600;
+  color: #2d5a2f;
+  font-size: 1.1rem;
+}
+
+.estado-respuesta {
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 15px;
+  font-size: 0.9rem;
+}
+
+.respuesta-item.correcta .estado-respuesta {
+  background: rgba(76, 175, 80, 0.2);
+  color: #2d5a2f;
+}
+
+.respuesta-item.incorrecta .estado-respuesta {
+  background: rgba(244, 67, 54, 0.2);
+  color: #d32f2f;
+}
+
+.pregunta-texto, .respuesta-usuario, .respuesta-correcta, .categoria-pregunta {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.pregunta-texto {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.respuesta-usuario {
+  color: #666;
+}
+
+.respuesta-correcta {
+  color: #2d5a2f;
+  font-weight: 500;
+}
+
+.categoria-pregunta {
+  color: #666;
+  font-size: 0.9rem;
+  font-style: italic;
+}

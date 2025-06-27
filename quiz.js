@@ -19,6 +19,15 @@ async function inicializarQuiz() {
         const datosCargados = await dataManager.cargarDatos();
         
         if (datosCargados) {
+            // Verificar si se quiere mostrar resultados de un quiz completado
+            const mostrarResultados = localStorage.getItem('mostrarResultadosQuiz');
+            if (mostrarResultados) {
+                localStorage.removeItem('mostrarResultadosQuiz'); // Limpiar después de usar
+                const resultados = JSON.parse(mostrarResultados);
+                mostrarResultadosQuizCompletado(resultados);
+                return;
+            }
+            
             // Verificar si ya completó el quiz de esta semana
             if (dataManager.verificarQuizCompletado()) {
                 mostrarQuizYaCompletado();
@@ -80,6 +89,71 @@ function mostrarQuizYaCompletado() {
                 <button onclick="verHistorialCompleto()" class="btn-historial">📈 Ver Historial Completo</button>
                 <button onclick="goBack()" class="btn-regresar">⬅ Volver al Inicio</button>
             </div>
+        </div>
+    `;
+}
+
+// Mostrar resultados detallados del quiz completado
+function mostrarResultadosQuizCompletado(resultados) {
+    preguntaElemento.textContent = "Resultados del Quiz";
+    opcionesElemento.innerHTML = "";
+    
+    const porcentaje = Math.round((resultados.puntaje / resultados.total) * 100);
+    let mensaje = "";
+    
+    if (porcentaje === 100) {
+        mensaje = "🎉 ¡Perfecto! Todas tus respuestas fueron correctas.";
+    } else if (porcentaje >= 80) {
+        mensaje = "👏 ¡Excelente! Muy buen conocimiento sobre educación ambiental.";
+    } else if (porcentaje >= 60) {
+        mensaje = "👍 ¡Buen trabajo! Sigue aprendiendo sobre el medio ambiente.";
+    } else {
+        mensaje = "📚 ¡Sigue estudiando! La educación ambiental es importante.";
+    }
+
+    resultadoElemento.innerHTML = `
+        <div class="resultado-final">
+            <h2>📊 Resultados del Quiz - Semana ${resultados.semana}</h2>
+            <p class="puntaje">Obtuviste ${resultados.puntaje} de ${resultados.total} respuestas correctas (${porcentaje}%)</p>
+            <p class="mensaje">${mensaje}</p>
+            
+            <div class="puntaje-acumulado">
+                <h3>🏆 Puntaje Acumulado</h3>
+                <div class="puntaje-info">
+                    <p><strong>Esta semana:</strong> +${resultados.puntaje} puntos</p>
+                    <p><strong>Total acumulado:</strong> ${resultados.puntajeTotal} puntos</p>
+                    <p><strong>Quizzes completados:</strong> ${resultados.totalQuizzes}</p>
+                </div>
+            </div>
+        </div>
+    `;
+
+    // Mostrar todas las respuestas (correctas e incorrectas)
+    if (resultados.respuestas && resultados.respuestas.length > 0) {
+        resultadoElemento.innerHTML += `
+            <div class="respuestas-detalladas">
+                <h3>📝 Revisión de Respuestas:</h3>
+                ${resultados.respuestas.map((r, index) => `
+                    <div class="respuesta-item ${r.esCorrecta ? 'correcta' : 'incorrecta'}">
+                        <div class="respuesta-header">
+                            <span class="numero-pregunta">Pregunta ${index + 1}</span>
+                            <span class="estado-respuesta">${r.esCorrecta ? '✅ Correcta' : '❌ Incorrecta'}</span>
+                        </div>
+                        <p class="pregunta-texto"><strong>Pregunta:</strong> ${r.pregunta}</p>
+                        <p class="respuesta-usuario"><strong>Tu respuesta:</strong> ${r.seleccion}</p>
+                        <p class="respuesta-correcta"><strong>Respuesta correcta:</strong> ${r.correcta}</p>
+                        <p class="categoria-pregunta"><strong>Categoría:</strong> ${traducirCategoria(r.categoria)}</p>
+                    </div>
+                `).join("")}
+            </div>
+        `;
+    }
+
+    // Agregar botones de acción
+    resultadoElemento.innerHTML += `
+        <div class="acciones-quiz">
+            <button onclick="verHistorialCompleto()" class="btn-historial">📈 Ver Historial Completo</button>
+            <button onclick="goBack()" class="btn-regresar">⬅ Volver al Inicio</button>
         </div>
     `;
 }

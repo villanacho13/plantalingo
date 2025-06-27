@@ -88,9 +88,10 @@ function mostrarEstadoQuiz() {
             </div>
         `;
         
-        btnQuiz.textContent = 'Quiz Completado';
-        btnQuiz.disabled = true;
-        btnQuiz.classList.add('disabled');
+        btnQuiz.textContent = '📊 Ver Resultados';
+        btnQuiz.disabled = false;
+        btnQuiz.classList.remove('disabled');
+        btnQuiz.onclick = verResultadosQuiz;
     } else {
         // Quiz disponible
         statusInfo.innerHTML = `
@@ -103,6 +104,7 @@ function mostrarEstadoQuiz() {
         btnQuiz.textContent = 'Comenzar Quiz';
         btnQuiz.disabled = false;
         btnQuiz.classList.remove('disabled');
+        btnQuiz.onclick = goToQuiz;
     }
 }
 
@@ -212,6 +214,21 @@ function goToQuiz() {
         return;
     }
     
+    window.location.href = "quiz.html";
+}
+
+// Función para ver resultados del quiz completado
+function verResultadosQuiz() {
+    if (!dataManager) return;
+    
+    const quizSemana = dataManager.obtenerQuizSemanaActual();
+    if (!quizSemana) {
+        alert('No se encontraron resultados del quiz de esta semana.');
+        return;
+    }
+    
+    // Guardar los resultados en localStorage para que el quiz.html los pueda mostrar
+    localStorage.setItem('mostrarResultadosQuiz', JSON.stringify(quizSemana));
     window.location.href = "quiz.html";
 }
 
