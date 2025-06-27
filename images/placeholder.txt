@@ -1,0 +1,43 @@
+INSTRUCCIONES PARA AGREGAR IMÁGENES:
+
+1. Coloca tus imágenes en esta carpeta (formato JPG, PNG o GIF)
+2. Nombra las imágenes según el patrón usado en articulos.json
+3. Ejemplos de nombres:
+   - biodiversidad-chile.jpg
+   - ecosistemas-chile.jpg
+   - especies-peligro.jpg
+   - cambio-climatico.jpg
+   - agricultura-sostenible.jpg
+   - energias-renovables.jpg
+   - oceanos-chile.jpg
+   - humedales.jpg
+   - economia-circular.jpg
+   - parques-nacionales.jpg
+   - polinizadores.jpg
+   - agua-recurso.jpg
+   - especies-invasoras.jpg
+   - educacion-ambiental.jpg
+   - turismo-sostenible.jpg
+   - bosque-nativo.jpg
+   - contaminacion-atmosferica.jpg
+   - semillas-nativas.jpg
+   - eficiencia-energetica.jpg
+   - movilidad-sostenible.jpg
+
+Para datos curiosos:
+   - alerce.jpg
+   - desierto-florido.jpg
+   - copihue.jpg
+   - pinguinos-humboldt.jpg
+   - palma-chilena.jpg
+   - observatorios-chile.jpg
+   - quillay.jpg
+   - glaciares.jpg
+   - huemul.jpg
+   - cactus.jpg
+
+RECOMENDACIONES:
+- Usa imágenes de alta calidad pero optimizadas (máximo 1MB por imagen)
+- Asegúrate de que las imágenes sean libres de derechos o tengas permiso para usarlas
+- Puedes encontrar imágenes gratuitas en: Unsplash, Pixabay, Wikimedia Commons
+- Las imágenes se mostrarán automáticamente en los artículos y datos curiosos 

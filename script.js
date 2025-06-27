@@ -117,8 +117,16 @@ function cargarArticulosSemana() {
     
     // Agregar artículos de la semana
     infoSemana.articulos.forEach(articulo => {
+        const imagenHTML = articulo.imagen ? 
+            `<div class="articulo-imagen-container">
+                <img src="${articulo.imagen}" alt="${articulo.titulo}" class="articulo-imagen" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="imagen-placeholder" style="display: none;">Imagen no disponible</div>
+             </div>` :
+            `<div class="imagen-placeholder">🌱 Imagen no disponible</div>`;
+        
         html += `
             <div class="articulo">
+                ${imagenHTML}
                 <h2>${articulo.titulo}</h2>
                 <p>${articulo.contenido}</p>
                 <div class="articulo-meta">
@@ -131,8 +139,16 @@ function cargarArticulosSemana() {
     
     // Agregar dato curioso de la semana
     if (infoSemana.datoCurioso) {
+        const imagenDatoHTML = infoSemana.datoCurioso.imagen ? 
+            `<div class="dato-curioso-imagen-container">
+                <img src="${infoSemana.datoCurioso.imagen}" alt="${infoSemana.datoCurioso.titulo}" class="dato-curioso-imagen" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="imagen-placeholder" style="display: none;">Imagen no disponible</div>
+             </div>` :
+            `<div class="imagen-placeholder">🌱 Imagen no disponible</div>`;
+        
         html += `
             <div class="datos-curiosos">
+                ${imagenDatoHTML}
                 <h2>${infoSemana.datoCurioso.titulo}</h2>
                 <p>${infoSemana.datoCurioso.contenido}</p>
             </div>
