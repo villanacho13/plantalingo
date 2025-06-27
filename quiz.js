@@ -400,6 +400,8 @@ function mostrarError(mensaje) {
 }
 
 function goBack() {
+    // Limpiar cualquier dato temporal antes de volver
+    localStorage.removeItem('mostrarResultadosQuiz');
     window.location.href = "index.html";
 }
 

@@ -11,6 +11,10 @@ async function inicializarPagina() {
         const datosCargados = await dataManager.cargarDatos();
         
         if (datosCargados) {
+            // Verificar que los datos del usuario se mantengan
+            const stats = dataManager.obtenerEstadisticasUsuario();
+            console.log('Estadísticas del usuario cargadas:', stats);
+            
             // Mostrar información de la semana actual
             mostrarInfoSemana();
             
@@ -227,8 +231,20 @@ function verResultadosQuiz() {
         return;
     }
     
-    // Guardar los resultados en localStorage para que el quiz.html los pueda mostrar
-    localStorage.setItem('mostrarResultadosQuiz', JSON.stringify(quizSemana));
+    // Obtener estadísticas actualizadas
+    const stats = dataManager.obtenerEstadisticasUsuario();
+    
+    // Crear objeto completo con todos los datos necesarios
+    const resultadosCompletos = {
+        ...quizSemana,
+        puntajeTotal: stats.puntajeTotal,
+        totalQuizzes: stats.totalQuizzes,
+        promedioPuntaje: stats.promedioPuntaje,
+        semana: dataManager.semanaActual
+    };
+    
+    // Guardar los resultados completos en localStorage para que el quiz.html los pueda mostrar
+    localStorage.setItem('mostrarResultadosQuiz', JSON.stringify(resultadosCompletos));
     window.location.href = "quiz.html";
 }
 
