@@ -1,159 +1,199 @@
-# Plantalingo - Plataforma de Educación Ambiental
+# 🌱 Plantalingo - Plataforma de Educación Ambiental
 
-## 🌱 Descripción
+Plantalingo es una plataforma web interactiva diseñada para promover la educación ambiental en Chile. Ofrece artículos semanales, datos curiosos y quizzes interactivos sobre temas ambientales relevantes para el país.
 
-Plantalingo es una plataforma web educativa sobre educación ambiental que ofrece artículos semanales y quizzes interactivos. El sistema está diseñado para proporcionar contenido fresco y variado cada semana, manteniendo el interés de los usuarios.
+## ✨ Características Principales
 
-## ✨ Características Implementadas
+- **Artículos Semanales**: Contenido educativo sobre biodiversidad, conservación, cambio climático y más
+- **Datos Curiosos**: Información interesante sobre la naturaleza chilena
+- **Quiz Interactivo**: Preguntas aleatorias con sistema de puntajes acumulativos
+- **Sistema de Puntajes**: Seguimiento del progreso semanal y total
+- **Rotación Automática**: Contenido que cambia automáticamente cada semana
+- **Imágenes Visuales**: Soporte para imágenes en artículos y datos curiosos
+- **Diseño Responsivo**: Funciona perfectamente en dispositivos móviles y de escritorio
 
-### 📚 Sistema de Artículos Semanales
-- **Rotación automática**: Los artículos cambian automáticamente cada semana
-- **20 artículos disponibles**: Cubren diversos temas de educación ambiental
-- **Datos curiosos**: Cada semana se muestra un dato curioso diferente
-- **Categorización**: Artículos organizados por temas (biodiversidad, conservación, etc.)
+## 🚀 Cómo Usar
 
-### 🎯 Sistema de Quiz con Preguntas Aleatorias
-- **60 preguntas disponibles**: Banco extenso de preguntas sobre educación ambiental
-- **Selección aleatoria**: Cada quiz muestra 5 preguntas diferentes
-- **Categorización**: Preguntas organizadas por categorías y niveles de dificultad
-- **Estadísticas detalladas**: Análisis por categoría y historial de resultados
-- **Persistencia**: Los resultados se guardan en localStorage
+### Para Usuarios
+1. Visita la plataforma en: https://villanacho13.github.io/plantalingo/
+2. Lee los artículos semanales sobre educación ambiental
+3. Descubre datos curiosos sobre la naturaleza chilena
+4. Completa el quiz semanal para poner a prueba tus conocimientos
+5. Revisa tu puntaje total y progreso
 
-### 📊 Funcionalidades Avanzadas
-- **Cálculo automático de semanas**: El sistema determina la semana actual del año
-- **Estadísticas del usuario**: Seguimiento de progreso y rendimiento
-- **Interfaz responsiva**: Diseño adaptativo para diferentes dispositivos
-- **Manejo de errores**: Sistema robusto de manejo de errores
+### Para Desarrolladores/Administradores
 
-## 🗂️ Estructura del Proyecto
+#### Agregar Nuevas Imágenes
+1. Coloca las imágenes en la carpeta `images/`
+2. Nombra las imágenes según el patrón usado en `data/articulos.json`
+3. Ejemplos de nombres:
+   - `biodiversidad-chile.jpg`
+   - `ecosistemas-chile.jpg`
+   - `especies-peligro.jpg`
+   - `cambio-climatico.jpg`
+   - `agricultura-sostenible.jpg`
+   - `energias-renovables.jpg`
+   - `oceanos-chile.jpg`
+   - `humedales.jpg`
+   - `economia-circular.jpg`
+   - `parques-nacionales.jpg`
+   - `polinizadores.jpg`
+   - `agua-recurso.jpg`
+   - `especies-invasoras.jpg`
+   - `educacion-ambiental.jpg`
+   - `turismo-sostenible.jpg`
+   - `bosque-nativo.jpg`
+   - `contaminacion-atmosferica.jpg`
+   - `semillas-nativas.jpg`
+   - `eficiencia-energetica.jpg`
+   - `movilidad-sostenible.jpg`
+
+#### Para Datos Curiosos:
+   - `alerce.jpg`
+   - `desierto-florido.jpg`
+   - `copihue.jpg`
+   - `pinguinos-humboldt.jpg`
+   - `palma-chilena.jpg`
+   - `observatorios-chile.jpg`
+   - `quillay.jpg`
+   - `glaciares.jpg`
+   - `huemul.jpg`
+   - `cactus.jpg`
+
+#### Agregar Nuevos Artículos
+1. Edita el archivo `data/articulos.json`
+2. Agrega un nuevo objeto con la siguiente estructura:
+```json
+{
+  "id": 21,
+  "titulo": "Título del Artículo",
+  "contenido": "Contenido del artículo...",
+  "categoria": "categoria",
+  "fecha_publicacion": "2025-05-26",
+  "semana": 21,
+  "imagen": "images/nombre-imagen.jpg"
+}
+```
+
+#### Agregar Nuevos Datos Curiosos
+1. En el mismo archivo `data/articulos.json`
+2. Agrega un nuevo objeto en la sección `datos_curiosos`:
+```json
+{
+  "id": 11,
+  "titulo": "Dato Curioso de la Semana",
+  "contenido": "Contenido del dato curioso...",
+  "semana": 11,
+  "imagen": "images/nombre-imagen.jpg"
+}
+```
+
+#### Agregar Nuevas Preguntas al Quiz
+1. Edita el archivo `data/preguntas.json`
+2. Agrega nuevas preguntas siguiendo la estructura existente
+
+## 📁 Estructura del Proyecto
 
 ```
 plantalingo/
+├── index.html              # Página principal
+├── quiz.html               # Página del quiz
+├── style.css               # Estilos CSS
+├── script.js               # JavaScript principal
+├── quiz.js                 # JavaScript del quiz
+├── config.js               # Configuración
 ├── data/
-│   ├── preguntas.json      # Banco de 60 preguntas del quiz
-│   └── articulos.json      # 20 artículos + 10 datos curiosos
+│   ├── articulos.json      # Artículos y datos curiosos
+│   └── preguntas.json      # Preguntas del quiz
+├── images/                 # Carpeta para imágenes
+│   └── placeholder.txt     # Instrucciones para imágenes
 ├── js/
-│   └── dataManager.js      # Lógica de manejo de datos
-├── inicio.html             # Página principal con artículos
-├── quiz.html              # Página del quiz
-├── quiz.js                # Lógica del quiz
-├── script.js              # Lógica de la página principal
-├── style.css              # Estilos CSS
-└── README.md              # Este archivo
+│   └── dataManager.js      # Gestor de datos
+└── README.md               # Este archivo
 ```
 
-## 🚀 Cómo Funciona
+## 🎯 Sistema de Puntajes
 
-### Sistema de Artículos
-1. **Cálculo de semana**: El sistema calcula automáticamente la semana actual del año
-2. **Selección de contenido**: Basado en la semana, selecciona 3 artículos específicos
-3. **Rotación**: Los artículos rotan automáticamente cada semana
-4. **Dato curioso**: Se muestra un dato curioso diferente cada semana
+- **1 Quiz por semana**: Los usuarios solo pueden completar un quiz por semana
+- **5 preguntas aleatorias**: Cada quiz contiene 5 preguntas seleccionadas aleatoriamente
+- **Puntaje acumulativo**: Los puntos se suman al total del usuario
+- **Estadísticas detalladas**: Seguimiento del progreso por categoría
 
-### Sistema de Quiz
-1. **Carga de preguntas**: Se cargan las 60 preguntas desde el archivo JSON
-2. **Selección aleatoria**: Se seleccionan 5 preguntas al azar
-3. **Mezcla de opciones**: Las opciones de respuesta se mezclan para mayor variedad
-4. **Evaluación**: Se evalúa cada respuesta y se generan estadísticas
-5. **Persistencia**: Los resultados se guardan para seguimiento del progreso
+## 🌍 Categorías de Contenido
 
-## 📝 Cómo Actualizar el Contenido
+- **Biodiversidad**: Especies nativas y conservación
+- **Ecosistemas**: Hábitats naturales de Chile
+- **Conservación**: Protección del medio ambiente
+- **Cambio Climático**: Impactos y soluciones
+- **Agricultura**: Prácticas sostenibles
+- **Energía**: Energías renovables
+- **Océanos**: Vida marina y protección
+- **Sostenibilidad**: Desarrollo sostenible
+- **Áreas Protegidas**: Parques nacionales
+- **Recursos Naturales**: Gestión de recursos
+- **Educación**: Educación ambiental
+- **Turismo**: Turismo sostenible
+- **Bosques**: Bosques nativos
+- **Contaminación**: Problemas ambientales
+- **Transporte**: Movilidad sostenible
 
-### Agregar Nuevas Preguntas
-1. Abrir `data/preguntas.json`
-2. Agregar nuevas preguntas al array `preguntas`
-3. Incluir los campos: `id`, `pregunta`, `opciones`, `respuesta`, `categoria`, `dificultad`
+## 🛠️ Tecnologías Utilizadas
 
-### Agregar Nuevos Artículos
-1. Abrir `data/articulos.json`
-2. Agregar nuevos artículos al array `articulos`
-3. Incluir los campos: `id`, `titulo`, `contenido`, `categoria`, `fecha_publicacion`, `semana`
-
-### Agregar Nuevos Datos Curiosos
-1. Abrir `data/articulos.json`
-2. Agregar nuevos datos al array `datos_curiosos`
-3. Incluir los campos: `id`, `titulo`, `contenido`, `semana`
-
-## 🎨 Categorías Disponibles
-
-### Artículos
-- Biodiversidad
-- Ecosistemas
-- Conservación
-- Cambio Climático
-- Agricultura
-- Energía
-- Océanos
-- Sostenibilidad
-- Áreas Protegidas
-- Recursos Naturales
-- Educación
-- Turismo
-- Bosques
-- Contaminación
-- Transporte
-
-### Preguntas del Quiz
-- Flora Nativa
-- Conservación
-- Conceptos Básicos
-- Ecosistemas
-- Problemas Ambientales
-- Acciones Sostenibles
-- Procesos Naturales
-- Cambio Climático
-- Recursos Naturales
-- Energía
-- Áreas Protegidas
-- Fauna Nativa
-- Agricultura Sostenible
-- Geografía de Chile
-- Océanos
-- Bosques
-- Contaminación
-- Transporte
-- Educación
-- Turismo
-- Sostenibilidad
-
-## 🔧 Tecnologías Utilizadas
-
-- **HTML5**: Estructura semántica
-- **CSS3**: Estilos modernos con gradientes y animaciones
-- **JavaScript ES6+**: Lógica de la aplicación
+- **HTML5**: Estructura de la página
+- **CSS3**: Estilos y diseño responsivo
+- **JavaScript**: Funcionalidad interactiva
 - **JSON**: Almacenamiento de datos
-- **localStorage**: Persistencia de datos del usuario
+- **LocalStorage**: Persistencia de datos del usuario
+- **GitHub Pages**: Hosting gratuito
 
-## 📱 Características Responsivas
+## 📱 Compatibilidad
 
-- Diseño adaptativo para móviles, tablets y desktop
-- Navegación optimizada para diferentes tamaños de pantalla
-- Botones y elementos interactivos adaptados para touch
+- ✅ Navegadores modernos (Chrome, Firefox, Safari, Edge)
+- ✅ Dispositivos móviles (iOS, Android)
+- ✅ Tablets
+- ✅ Computadoras de escritorio
 
-## 🎯 Beneficios del Sistema
+## 🔧 Instalación Local
 
-1. **Contenido Fresco**: Los usuarios siempre ven contenido nuevo
-2. **Variedad**: 60 preguntas diferentes aseguran variedad en los quizzes
-3. **Engagement**: Sistema de estadísticas motiva la participación
-4. **Escalabilidad**: Fácil agregar nuevo contenido
-5. **Mantenimiento**: Actualización semanal automática sin intervención manual
+1. Clona el repositorio:
+```bash
+git clone https://github.com/villanacho13/plantalingo.git
+```
 
-## 🚀 Instalación y Uso
+2. Navega al directorio:
+```bash
+cd plantalingo
+```
 
-1. Clonar o descargar el proyecto
-2. Abrir `inicio.html` en un navegador web
-3. ¡Listo! El sistema funcionará automáticamente
+3. Abre `index.html` en tu navegador o usa un servidor local:
+```bash
+python -m http.server 8000
+```
 
-## 📈 Próximas Mejoras Sugeridas
+## 📝 Notas Importantes
 
-- Sistema de usuarios con cuentas
-- Base de datos real (MySQL/PostgreSQL)
-- Panel de administración para gestionar contenido
-- Sistema de notificaciones para nuevos artículos
-- Integración con redes sociales
-- Sistema de logros y badges
-- Contenido multimedia (imágenes, videos)
+- **Imágenes**: Asegúrate de que las imágenes sean libres de derechos o tengas permiso para usarlas
+- **Optimización**: Las imágenes deben estar optimizadas (máximo 1MB por imagen)
+- **Formatos**: Se recomienda usar JPG, PNG o GIF
+- **Nombres**: Usa nombres descriptivos y sin espacios para las imágenes
+
+## 🤝 Contribuciones
+
+Las contribuciones son bienvenidas. Para contribuir:
+
+1. Haz un fork del proyecto
+2. Crea una rama para tu feature
+3. Haz commit de tus cambios
+4. Abre un Pull Request
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
+
+## 👨‍💻 Autor
+
+Desarrollado para promover la educación ambiental en Chile.
 
 ---
 
-**Desarrollado para promover la educación ambiental y crear conciencia sobre la importancia de proteger nuestro planeta.** 🌍 
+**¡Únete a Plantalingo y aprende sobre el medio ambiente de Chile de manera interactiva y divertida!** 🌱🇨🇱 
