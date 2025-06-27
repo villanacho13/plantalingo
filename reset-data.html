@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resetear Datos - Plantalingo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f0f8f0;
+        }
+        .reset-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        .btn-reset {
+            background: #f44336;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .btn-reset:hover {
+            background: #d32f2f;
+        }
+        .btn-volver {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .btn-volver:hover {
+            background: #45a049;
+        }
+        .mensaje {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .mensaje.exito {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .mensaje.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="reset-container">
+        <h1>🔄 Resetear Datos de Plantalingo</h1>
+        <p>Esta página te permite resetear todos los datos guardados en tu navegador.</p>
+        
+        <div id="datos-actuales">
+            <h3>Datos Actuales:</h3>
+            <p id="info-datos">Cargando...</p>
+        </div>
+        
+        <div id="mensaje"></div>
+        
+        <button onclick="resetearDatos()" class="btn-reset">🗑️ Resetear Todos los Datos</button>
+        <br>
+        <button onclick="volver()" class="btn-volver">🏠 Volver a Plantalingo</button>
+    </div>
+
+    <script>
+        // Mostrar datos actuales
+        function mostrarDatosActuales() {
+            const quizzes = JSON.parse(localStorage.getItem('plantalingo_quizzes_completados') || '[]');
+            const puntajeTotal = quizzes.reduce((total, quiz) => total + quiz.puntaje, 0);
+            
+            document.getElementById('info-datos').innerHTML = `
+                <strong>Quizzes completados:</strong> ${quizzes.length}<br>
+                <strong>Puntaje total:</strong> ${puntajeTotal}<br>
+                <strong>Promedio:</strong> ${quizzes.length > 0 ? (puntajeTotal / quizzes.length).toFixed(1) : 0}
+            `;
+        }
+
+        // Resetear todos los datos
+        function resetearDatos() {
+            if (confirm('¿Estás seguro de que quieres eliminar TODOS los datos? Esta acción no se puede deshacer.')) {
+                try {
+                    // Eliminar todos los datos relacionados con Plantalingo
+                    localStorage.removeItem('plantalingo_quizzes_completados');
+                    localStorage.removeItem('mostrarResultadosQuiz');
+                    
+                    // Mostrar mensaje de éxito
+                    document.getElementById('mensaje').innerHTML = `
+                        <div class="mensaje exito">
+                            ✅ ¡Datos eliminados exitosamente!<br>
+                            Todos los puntajes y quizzes han sido reseteados.
+                        </div>
+                    `;
+                    
+                    // Actualizar información
+                    mostrarDatosActuales();
+                    
+                } catch (error) {
+                    document.getElementById('mensaje').innerHTML = `
+                        <div class="mensaje error">
+                            ❌ Error al eliminar los datos: ${error.message}
+                        </div>
+                    `;
+                }
+            }
+        }
+
+        // Volver a Plantalingo
+        function volver() {
+            window.location.href = 'index.html';
+        }
+
+        // Cargar datos al abrir la página
+        document.addEventListener('DOMContentLoaded', mostrarDatosActuales);
+    </script>
+</body>
+</html> 
