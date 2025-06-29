@@ -430,25 +430,23 @@ function mostrarError(mensaje) {
     if (container) {
         container.innerHTML = `
             <div class="error-mensaje">
-                <p>${mensaje}</p>
-                <button class="btn-reintentar" onclick="location.reload()">Reintentar</button>
+                <p>❌ ${mensaje}</p>
+                <button onclick="inicializarPagina()" class="btn-reintentar">🔄 Reintentar</button>
             </div>
         `;
     }
 }
 
-// Navegar al quiz
+// Función para ir al quiz
 function goToQuiz() {
-    window.location.href = 'quiz.html';
-}
-
-// Cerrar modal al hacer clic fuera
-document.addEventListener('click', function(event) {
-    const modal = document.getElementById('preferences-modal');
-    if (event.target === modal) {
-        cerrarPreferencias();
+    // Verificar si ya completó el quiz de esta semana
+    if (dataManager && dataManager.verificarQuizCompletado()) {
+        alert('Ya completaste el quiz de esta semana. ¡Vuelve la próxima semana para un nuevo desafío!');
+        return;
     }
-});
+    
+    window.location.href = "quiz.html";
+}
 
 // Inicializar la página cuando se carga el DOM
 document.addEventListener('DOMContentLoaded', inicializarPagina);
