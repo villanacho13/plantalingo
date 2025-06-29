@@ -29,9 +29,9 @@
   /* Tamaños de fuente */
   --font-size-small: 0.9rem;
   --font-size-normal: 1rem;
-  --font-size-large: 5.0rem;
-  --font-size-xlarge: 5.0rem;
-  --font-size-xxlarge: 5.0rem;
+  --font-size-large: 1.2rem;
+  --font-size-xlarge: 1.5rem;
+  --font-size-xxlarge: 3rem;
 }
 
 /* Modo oscuro */
