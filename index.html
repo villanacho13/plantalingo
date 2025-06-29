@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plantalingo - Educación Ambiental</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Plantalingo</h1>
+    <div class="semana-info">
+      <span id="semana-actual">Semana 1</span>
+      <span id="fecha-actual"></span>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="articulos" id="articulos-container">
+      <!-- Los artículos se cargarán dinámicamente aquí -->
+      <div class="loading">
+        <p>Cargando artículos...</p>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <div class="puntaje-total">
+        <h3>🏆 Tu Puntaje Total</h3>
+        <div class="puntaje-numero" id="puntaje-total">0</div>
+        <div class="puntaje-info">
+          <span id="quizzes-completados">0 quizzes completados</span>
+          <span id="promedio-puntaje">Promedio: 0</span>
+        </div>
+      </div>
+
+      <div class="quiz-status" id="quiz-status">
+        <h3>🎯 Quiz Semanal</h3>
+        <div class="status-info" id="status-info">
+          <!-- El estado se cargará dinámicamente -->
+        </div>
+      </div>
+
+      <div class="quiz-btn">
+        <button onclick="goToQuiz()" id="btn-quiz">
+          Quiz Semanal
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Plantalingo</p>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="js/dataManager.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

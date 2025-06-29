@@ -1,0 +1,484 @@
+{
+  "preguntas": [
+    {
+      "id": 1,
+      "pregunta": "¿Cuál de estas especies es nativa de Chile?",
+      "opciones": ["Eucalipto", "Araucaria", "Pino", "Olmo"],
+      "respuesta": "Araucaria",
+      "categoria": "flora_nativa",
+      "dificultad": "facil"
+    },
+    {
+      "id": 2,
+      "pregunta": "¿Qué acción ayuda más al cuidado de los bosques?",
+      "opciones": ["Imprimir todo en papel", "Evitar productos de madera ilegal", "Quemar hojas", "Cortar árboles pequeños"],
+      "respuesta": "Evitar productos de madera ilegal",
+      "categoria": "conservacion",
+      "dificultad": "facil"
+    },
+    {
+      "id": 3,
+      "pregunta": "¿Qué significa 'ecosistema'?",
+      "opciones": ["Un lugar sin animales", "Una especie en peligro", "Conjunto de seres vivos e interacción con su ambiente", "Plantas exóticas"],
+      "respuesta": "Conjunto de seres vivos e interacción con su ambiente",
+      "categoria": "conceptos_basicos",
+      "dificultad": "facil"
+    },
+    {
+      "id": 4,
+      "pregunta": "¿Cuál es la función principal de los árboles en el ecosistema?",
+      "opciones": ["Solo dar sombra", "Producir oxígeno y absorber CO2", "Decorar el paisaje", "Proporcionar madera"],
+      "respuesta": "Producir oxígeno y absorber CO2",
+      "categoria": "ecosistemas",
+      "dificultad": "facil"
+    },
+    {
+      "id": 5,
+      "pregunta": "¿Qué es la biodiversidad?",
+      "opciones": ["Solo plantas", "Variedad de vida en la Tierra", "Animales grandes", "Bosques únicamente"],
+      "respuesta": "Variedad de vida en la Tierra",
+      "categoria": "conceptos_basicos",
+      "dificultad": "facil"
+    },
+    {
+      "id": 6,
+      "pregunta": "¿Cuál de estos es un problema ambiental causado por la deforestación?",
+      "opciones": ["Más lluvia", "Pérdida de hábitat", "Más oxígeno", "Temperaturas más bajas"],
+      "respuesta": "Pérdida de hábitat",
+      "categoria": "problemas_ambientales",
+      "dificultad": "facil"
+    },
+    {
+      "id": 7,
+      "pregunta": "¿Qué significa 'especie endémica'?",
+      "opciones": ["Una especie que vive en muchos lugares", "Una especie que solo existe en un lugar específico", "Una especie extinta", "Una especie doméstica"],
+      "respuesta": "Una especie que solo existe en un lugar específico",
+      "categoria": "conceptos_basicos",
+      "dificultad": "medio"
+    },
+    {
+      "id": 8,
+      "pregunta": "¿Cuál es el árbol nacional de Chile?",
+      "opciones": ["Araucaria", "Copihue", "Palma chilena", "Alerce"],
+      "respuesta": "Araucaria",
+      "categoria": "flora_nativa",
+      "dificultad": "facil"
+    },
+    {
+      "id": 9,
+      "pregunta": "¿Qué es el cambio climático?",
+      "opciones": ["Solo cambios de temperatura", "Alteración del clima global por actividades humanas", "Cambios estacionales normales", "Solo calentamiento"],
+      "respuesta": "Alteración del clima global por actividades humanas",
+      "categoria": "cambio_climatico",
+      "dificultad": "medio"
+    },
+    {
+      "id": 10,
+      "pregunta": "¿Cuál de estas acciones reduce la huella de carbono?",
+      "opciones": ["Usar más plástico", "Caminar en lugar de usar auto", "Comprar productos importados", "Usar más electricidad"],
+      "respuesta": "Caminar en lugar de usar auto",
+      "categoria": "acciones_sostenibles",
+      "dificultad": "facil"
+    },
+    {
+      "id": 11,
+      "pregunta": "¿Qué es la fotosíntesis?",
+      "opciones": ["Proceso de respiración", "Proceso donde las plantas producen su alimento", "Proceso de reproducción", "Proceso de crecimiento"],
+      "respuesta": "Proceso donde las plantas producen su alimento",
+      "categoria": "procesos_naturales",
+      "dificultad": "facil"
+    },
+    {
+      "id": 12,
+      "pregunta": "¿Cuál es la flor nacional de Chile?",
+      "opciones": ["Copihue", "Rosa", "Margarita", "Tulipán"],
+      "respuesta": "Copihue",
+      "categoria": "flora_nativa",
+      "dificultad": "facil"
+    },
+    {
+      "id": 13,
+      "pregunta": "¿Qué significa 'desarrollo sostenible'?",
+      "opciones": ["Desarrollo sin límites", "Desarrollo que satisface necesidades actuales sin comprometer futuras", "Desarrollo solo económico", "Desarrollo rápido"],
+      "respuesta": "Desarrollo que satisface necesidades actuales sin comprometer futuras",
+      "categoria": "conceptos_basicos",
+      "dificultad": "medio"
+    },
+    {
+      "id": 14,
+      "pregunta": "¿Cuál de estos es un recurso renovable?",
+      "opciones": ["Petróleo", "Energía solar", "Carbón", "Gas natural"],
+      "respuesta": "Energía solar",
+      "categoria": "recursos_naturales",
+      "dificultad": "facil"
+    },
+    {
+      "id": 15,
+      "pregunta": "¿Qué es la contaminación?",
+      "opciones": ["Solo basura visible", "Introducción de sustancias nocivas al ambiente", "Solo humo", "Solo ruido"],
+      "respuesta": "Introducción de sustancias nocivas al ambiente",
+      "categoria": "problemas_ambientales",
+      "dificultad": "facil"
+    },
+    {
+      "id": 16,
+      "pregunta": "¿Cuál es el desierto más árido del mundo?",
+      "opciones": ["Sahara", "Desierto de Atacama", "Gobi", "Kalahari"],
+      "respuesta": "Desierto de Atacama",
+      "categoria": "geografia_chile",
+      "dificultad": "facil"
+    },
+    {
+      "id": 17,
+      "pregunta": "¿Qué es la reforestación?",
+      "opciones": ["Cortar árboles", "Plantar árboles donde antes había bosque", "Quemar bosques", "Vender madera"],
+      "respuesta": "Plantar árboles donde antes había bosque",
+      "categoria": "conservacion",
+      "dificultad": "facil"
+    },
+    {
+      "id": 18,
+      "pregunta": "¿Cuál de estos animales es endémico de Chile?",
+      "opciones": ["Puma", "Huemul", "Zorro", "Cóndor"],
+      "respuesta": "Huemul",
+      "categoria": "fauna_nativa",
+      "dificultad": "medio"
+    },
+    {
+      "id": 19,
+      "pregunta": "¿Qué es la erosión del suelo?",
+      "opciones": ["Crecimiento de plantas", "Pérdida de la capa fértil del suelo", "Formación de montañas", "Creación de valles"],
+      "respuesta": "Pérdida de la capa fértil del suelo",
+      "categoria": "problemas_ambientales",
+      "dificultad": "medio"
+    },
+    {
+      "id": 20,
+      "pregunta": "¿Cuál es la importancia de los humedales?",
+      "opciones": ["Solo para aves", "Filtran agua y son hábitat de muchas especies", "Solo para pesca", "Solo para turismo"],
+      "respuesta": "Filtran agua y son hábitat de muchas especies",
+      "categoria": "ecosistemas",
+      "dificultad": "medio"
+    },
+    {
+      "id": 21,
+      "pregunta": "¿Qué es la energía renovable?",
+      "opciones": ["Energía que se agota", "Energía que se regenera naturalmente", "Solo energía nuclear", "Solo energía fósil"],
+      "respuesta": "Energía que se regenera naturalmente",
+      "categoria": "energia",
+      "dificultad": "facil"
+    },
+    {
+      "id": 22,
+      "pregunta": "¿Cuál de estos es un parque nacional de Chile?",
+      "opciones": ["Torres del Paine", "Machu Picchu", "Iguazú", "Galápagos"],
+      "respuesta": "Torres del Paine",
+      "categoria": "areas_protegidas",
+      "dificultad": "facil"
+    },
+    {
+      "id": 23,
+      "pregunta": "¿Qué es la cadena alimentaria?",
+      "opciones": ["Solo plantas", "Transferencia de energía entre organismos", "Solo animales", "Solo depredadores"],
+      "respuesta": "Transferencia de energía entre organismos",
+      "categoria": "ecosistemas",
+      "dificultad": "medio"
+    },
+    {
+      "id": 24,
+      "pregunta": "¿Cuál es el impacto de las especies invasoras?",
+      "opciones": ["Siempre son beneficiosas", "Pueden desplazar especies nativas", "Solo afectan plantas", "No tienen impacto"],
+      "respuesta": "Pueden desplazar especies nativas",
+      "categoria": "problemas_ambientales",
+      "dificultad": "medio"
+    },
+    {
+      "id": 25,
+      "pregunta": "¿Qué es la agricultura orgánica?",
+      "opciones": ["Agricultura sin agua", "Agricultura sin pesticidas químicos", "Agricultura sin semillas", "Agricultura sin tierra"],
+      "respuesta": "Agricultura sin pesticidas químicos",
+      "categoria": "agricultura_sostenible",
+      "dificultad": "medio"
+    },
+    {
+      "id": 26,
+      "pregunta": "¿Cuál es la función de las abejas en el ecosistema?",
+      "opciones": ["Solo producir miel", "Polinizar plantas", "Solo hacer ruido", "Solo picar"],
+      "respuesta": "Polinizar plantas",
+      "categoria": "ecosistemas",
+      "dificultad": "facil"
+    },
+    {
+      "id": 27,
+      "pregunta": "¿Qué es el reciclaje?",
+      "opciones": ["Solo tirar basura", "Procesar materiales para reutilizarlos", "Solo quemar basura", "Solo enterrar basura"],
+      "respuesta": "Procesar materiales para reutilizarlos",
+      "categoria": "acciones_sostenibles",
+      "dificultad": "facil"
+    },
+    {
+      "id": 28,
+      "pregunta": "¿Cuál es el árbol más longevo de Chile?",
+      "opciones": ["Araucaria", "Alerce", "Palma chilena", "Quillay"],
+      "respuesta": "Alerce",
+      "categoria": "flora_nativa",
+      "dificultad": "medio"
+    },
+    {
+      "id": 29,
+      "pregunta": "¿Qué es la desertificación?",
+      "opciones": ["Formación de desiertos", "Degradación de tierras fértiles a desierto", "Crecimiento de bosques", "Formación de montañas"],
+      "respuesta": "Degradación de tierras fértiles a desierto",
+      "categoria": "problemas_ambientales",
+      "dificultad": "medio"
+    },
+    {
+      "id": 30,
+      "pregunta": "¿Cuál es la importancia de los océanos?",
+      "opciones": ["Solo para pesca", "Regulan el clima y producen oxígeno", "Solo para transporte", "Solo para turismo"],
+      "respuesta": "Regulan el clima y producen oxígeno",
+      "categoria": "ecosistemas",
+      "dificultad": "medio"
+    },
+    {
+      "id": 31,
+      "pregunta": "¿Qué es la huella hídrica?",
+      "opciones": ["Agua que bebemos", "Cantidad de agua necesaria para producir bienes", "Agua de lluvia", "Agua del mar"],
+      "respuesta": "Cantidad de agua necesaria para producir bienes",
+      "categoria": "recursos_naturales",
+      "dificultad": "dificil"
+    },
+    {
+      "id": 32,
+      "pregunta": "¿Cuál de estos es un gas de efecto invernadero?",
+      "opciones": ["Oxígeno", "Dióxido de carbono", "Nitrógeno", "Hidrógeno"],
+      "respuesta": "Dióxido de carbono",
+      "categoria": "cambio_climatico",
+      "dificultad": "medio"
+    },
+    {
+      "id": 33,
+      "pregunta": "¿Qué es la biodiversidad marina?",
+      "opciones": ["Solo peces", "Variedad de vida en los océanos", "Solo algas", "Solo mamíferos marinos"],
+      "respuesta": "Variedad de vida en los océanos",
+      "categoria": "ecosistemas",
+      "dificultad": "medio"
+    },
+    {
+      "id": 34,
+      "pregunta": "¿Cuál es la función de los parques nacionales?",
+      "opciones": ["Solo para turismo", "Proteger ecosistemas y biodiversidad", "Solo para caza", "Solo para extracción de recursos"],
+      "respuesta": "Proteger ecosistemas y biodiversidad",
+      "categoria": "areas_protegidas",
+      "dificultad": "facil"
+    },
+    {
+      "id": 35,
+      "pregunta": "¿Qué es la agricultura sostenible?",
+      "opciones": ["Agricultura sin producción", "Agricultura que mantiene la productividad sin dañar el ambiente", "Agricultura sin tecnología", "Agricultura sin semillas"],
+      "respuesta": "Agricultura que mantiene la productividad sin dañar el ambiente",
+      "categoria": "agricultura_sostenible",
+      "dificultad": "medio"
+    },
+    {
+      "id": 36,
+      "pregunta": "¿Cuál es el impacto del plástico en los océanos?",
+      "opciones": ["Solo contamina visualmente", "Daña la vida marina y contamina el agua", "Solo afecta a las aves", "No tiene impacto"],
+      "respuesta": "Daña la vida marina y contamina el agua",
+      "categoria": "problemas_ambientales",
+      "dificultad": "medio"
+    },
+    {
+      "id": 37,
+      "pregunta": "¿Qué es la energía eólica?",
+      "opciones": ["Energía del sol", "Energía del viento", "Energía del agua", "Energía nuclear"],
+      "respuesta": "Energía del viento",
+      "categoria": "energia",
+      "dificultad": "facil"
+    },
+    {
+      "id": 38,
+      "pregunta": "¿Cuál es la importancia de los bosques nativos?",
+      "opciones": ["Solo para madera", "Mantienen biodiversidad y regulan el clima", "Solo para sombra", "Solo para leña"],
+      "respuesta": "Mantienen biodiversidad y regulan el clima",
+      "categoria": "ecosistemas",
+      "dificultad": "medio"
+    },
+    {
+      "id": 39,
+      "pregunta": "¿Qué es la economía circular?",
+      "opciones": ["Economía sin producción", "Sistema que reutiliza y recicla recursos", "Economía solo de servicios", "Economía sin consumo"],
+      "respuesta": "Sistema que reutiliza y recicla recursos",
+      "categoria": "conceptos_basicos",
+      "dificultad": "dificil"
+    },
+    {
+      "id": 40,
+      "pregunta": "¿Cuál es el ave nacional de Chile?",
+      "opciones": ["Cóndor", "Águila", "Halcón", "Búho"],
+      "respuesta": "Cóndor",
+      "categoria": "fauna_nativa",
+      "dificultad": "facil"
+    },
+    {
+      "id": 41,
+      "pregunta": "¿Qué es la acidificación de los océanos?",
+      "opciones": ["Aumento de salinidad", "Disminución del pH del agua marina", "Aumento de temperatura", "Disminución de oxígeno"],
+      "respuesta": "Disminución del pH del agua marina",
+      "categoria": "cambio_climatico",
+      "dificultad": "dificil"
+    },
+    {
+      "id": 42,
+      "pregunta": "¿Cuál es la función de los polinizadores?",
+      "opciones": ["Solo producir miel", "Transferir polen entre flores", "Solo hacer ruido", "Solo alimentarse"],
+      "respuesta": "Transferir polen entre flores",
+      "categoria": "ecosistemas",
+      "dificultad": "medio"
+    },
+    {
+      "id": 43,
+      "pregunta": "¿Qué es la agricultura vertical?",
+      "opciones": ["Agricultura en montañas", "Cultivo en capas apiladas", "Agricultura subterránea", "Agricultura flotante"],
+      "respuesta": "Cultivo en capas apiladas",
+      "categoria": "agricultura_sostenible",
+      "dificultad": "dificil"
+    },
+    {
+      "id": 44,
+      "pregunta": "¿Cuál es el impacto de la minería en el ambiente?",
+      "opciones": ["Solo beneficioso", "Puede contaminar agua y suelo", "Solo afecta el aire", "No tiene impacto"],
+      "respuesta": "Puede contaminar agua y suelo",
+      "categoria": "problemas_ambientales",
+      "dificultad": "medio"
+    },
+    {
+      "id": 45,
+      "pregunta": "¿Qué es la energía hidroeléctrica?",
+      "opciones": ["Energía del sol", "Energía del viento", "Energía del agua en movimiento", "Energía nuclear"],
+      "respuesta": "Energía del agua en movimiento",
+      "categoria": "energia",
+      "dificultad": "medio"
+    },
+    {
+      "id": 46,
+      "pregunta": "¿Cuál es la importancia de las semillas nativas?",
+      "opciones": ["Solo para colección", "Mantienen diversidad genética y adaptación local", "Solo para decoración", "Solo para alimentación"],
+      "respuesta": "Mantienen diversidad genética y adaptación local",
+      "categoria": "agricultura_sostenible",
+      "dificultad": "dificil"
+    },
+    {
+      "id": 47,
+      "pregunta": "¿Qué es la permacultura?",
+      "opciones": ["Solo jardinería", "Sistema de diseño sostenible", "Solo agricultura orgánica", "Solo reciclaje"],
+      "respuesta": "Sistema de diseño sostenible",
+      "categoria": "agricultura_sostenible",
+      "dificultad": "dificil"
+    },
+    {
+      "id": 48,
+      "pregunta": "¿Cuál es el impacto del turismo en áreas naturales?",
+      "opciones": ["Solo beneficioso", "Puede dañar ecosistemas si no es sostenible", "Solo afecta animales", "No tiene impacto"],
+      "respuesta": "Puede dañar ecosistemas si no es sostenible",
+      "categoria": "problemas_ambientales",
+      "dificultad": "medio"
+    },
+    {
+      "id": 49,
+      "pregunta": "¿Qué es la energía geotérmica?",
+      "opciones": ["Energía del sol", "Energía del viento", "Energía del calor interno de la Tierra", "Energía nuclear"],
+      "respuesta": "Energía del calor interno de la Tierra",
+      "categoria": "energia",
+      "dificultad": "dificil"
+    },
+    {
+      "id": 50,
+      "pregunta": "¿Cuál es la importancia de los corredores biológicos?",
+      "opciones": ["Solo para caminar", "Conectan hábitats fragmentados", "Solo para animales", "Solo para plantas"],
+      "respuesta": "Conectan hábitats fragmentados",
+      "categoria": "conservacion",
+      "dificultad": "dificil"
+    },
+    {
+      "id": 51,
+      "pregunta": "¿Qué es la agricultura biodinámica?",
+      "opciones": ["Agricultura sin agua", "Agricultura que considera ciclos cósmicos", "Agricultura sin tierra", "Agricultura sin semillas"],
+      "respuesta": "Agricultura que considera ciclos cósmicos",
+      "categoria": "agricultura_sostenible",
+      "dificultad": "dificil"
+    },
+    {
+      "id": 52,
+      "pregunta": "¿Cuál es el impacto de la pesca industrial?",
+      "opciones": ["Solo beneficioso", "Puede agotar poblaciones de peces", "Solo afecta algas", "No tiene impacto"],
+      "respuesta": "Puede agotar poblaciones de peces",
+      "categoria": "problemas_ambientales",
+      "dificultad": "medio"
+    },
+    {
+      "id": 53,
+      "pregunta": "¿Qué es la energía solar fotovoltaica?",
+      "opciones": ["Energía del viento", "Energía del agua", "Energía del sol convertida en electricidad", "Energía nuclear"],
+      "respuesta": "Energía del sol convertida en electricidad",
+      "categoria": "energia",
+      "dificultad": "medio"
+    },
+    {
+      "id": 54,
+      "pregunta": "¿Cuál es la importancia de los insectos en el ecosistema?",
+      "opciones": ["Solo molestar", "Polinización, descomposición y control de plagas", "Solo hacer ruido", "Solo picar"],
+      "respuesta": "Polinización, descomposición y control de plagas",
+      "categoria": "ecosistemas",
+      "dificultad": "medio"
+    },
+    {
+      "id": 55,
+      "pregunta": "¿Qué es la agricultura de conservación?",
+      "opciones": ["Agricultura sin producción", "Agricultura que protege el suelo", "Agricultura sin tecnología", "Agricultura sin semillas"],
+      "respuesta": "Agricultura que protege el suelo",
+      "categoria": "agricultura_sostenible",
+      "dificultad": "dificil"
+    },
+    {
+      "id": 56,
+      "pregunta": "¿Cuál es el impacto de la urbanización en la biodiversidad?",
+      "opciones": ["Solo beneficioso", "Puede fragmentar hábitats y reducir biodiversidad", "Solo afecta plantas", "No tiene impacto"],
+      "respuesta": "Puede fragmentar hábitats y reducir biodiversidad",
+      "categoria": "problemas_ambientales",
+      "dificultad": "medio"
+    },
+    {
+      "id": 57,
+      "pregunta": "¿Qué es la energía mareomotriz?",
+      "opciones": ["Energía del viento", "Energía de las mareas", "Energía del sol", "Energía nuclear"],
+      "respuesta": "Energía de las mareas",
+      "categoria": "energia",
+      "dificultad": "dificil"
+    },
+    {
+      "id": 58,
+      "pregunta": "¿Cuál es la importancia de los bancos de semillas?",
+      "opciones": ["Solo para colección", "Preservar diversidad genética", "Solo para decoración", "Solo para alimentación"],
+      "respuesta": "Preservar diversidad genética",
+      "categoria": "conservacion",
+      "dificultad": "dificil"
+    },
+    {
+      "id": 59,
+      "pregunta": "¿Qué es la agricultura regenerativa?",
+      "opciones": ["Agricultura sin producción", "Agricultura que mejora la salud del suelo", "Agricultura sin tecnología", "Agricultura sin semillas"],
+      "respuesta": "Agricultura que mejora la salud del suelo",
+      "categoria": "agricultura_sostenible",
+      "dificultad": "dificil"
+    },
+    {
+      "id": 60,
+      "pregunta": "¿Cuál es el impacto del cambio climático en la biodiversidad?",
+      "opciones": ["Solo beneficioso", "Puede causar extinciones y cambios en ecosistemas", "Solo afecta plantas", "No tiene impacto"],
+      "respuesta": "Puede causar extinciones y cambios en ecosistemas",
+      "categoria": "cambio_climatico",
+      "dificultad": "medio"
+    }
+  ]
+} 
