@@ -4,8 +4,6 @@ let preguntas = [];
 let indice = 0;
 let puntaje = 0;
 let respuestasUsuario = [];
-let currentTheme = 'light';
-let currentFontSize = 'normal';
 
 const preguntaElemento = document.getElementById('question');
 const opcionesElemento = document.getElementById('options');
@@ -14,9 +12,6 @@ const resultadoElemento = document.getElementById('result');
 // Inicializar el quiz
 async function inicializarQuiz() {
     try {
-        // Cargar preferencias del usuario
-        cargarPreferenciasUsuario();
-        
         // Crear instancia del DataManager
         dataManager = new DataManager();
         
@@ -48,299 +43,291 @@ async function inicializarQuiz() {
     }
 }
 
-// Sistema de preferencias de usuario
-function cargarPreferenciasUsuario() {
-    // Cargar tema
-    const temaGuardado = localStorage.getItem('plantalingo_theme') || 'light';
-    aplicarTema(temaGuardado);
-    
-    // Cargar tamaño de fuente
-    const fontSizeGuardado = localStorage.getItem('plantalingo_font_size') || 'normal';
-    aplicarTamañoFuente(fontSizeGuardado);
-    
-    // Crear controles de tema
-    crearControlesTema();
-}
-
-function crearControlesTema() {
-    // Crear contenedor de controles
-    const themeControls = document.createElement('div');
-    themeControls.className = 'theme-controls';
-    
-    // Botón de cambio de tema
-    const themeToggle = document.createElement('button');
-    themeToggle.className = 'theme-toggle';
-    themeToggle.innerHTML = currentTheme === 'light' ? '🌙 Modo Oscuro' : '☀️ Modo Claro';
-    themeToggle.onclick = cambiarTema;
-    
-    // Botón de preferencias
-    const preferencesBtn = document.createElement('button');
-    preferencesBtn.className = 'preferences-btn';
-    preferencesBtn.innerHTML = '⚙️';
-    preferencesBtn.onclick = mostrarPreferencias;
-    
-    themeControls.appendChild(themeToggle);
-    themeControls.appendChild(preferencesBtn);
-    
-    // Insertar al inicio del body
-    document.body.insertBefore(themeControls, document.body.firstChild);
-    
-    // Crear modal de preferencias
-    crearModalPreferencias();
-}
-
-function crearModalPreferencias() {
-    const modal = document.createElement('div');
-    modal.className = 'preferences-modal';
-    modal.id = 'preferences-modal';
-    
-    modal.innerHTML = `
-        <div class="preferences-content">
-            <div class="preferences-header">
-                <h2>Preferencias</h2>
-                <button class="close-btn" onclick="cerrarPreferencias()">&times;</button>
-            </div>
-            <div class="preference-item">
-                <label for="theme-select">Tema:</label>
-                <select id="theme-select" class="preference-control" onchange="cambiarTemaDesdeSelect()">
-                    <option value="light">Claro</option>
-                    <option value="dark">Oscuro</option>
-                </select>
-            </div>
-            <div class="preference-item">
-                <label>Tamaño de fuente:</label>
-                <div class="font-size-controls">
-                    <button class="font-size-btn" data-size="small" onclick="cambiarTamañoFuente('small')">A</button>
-                    <button class="font-size-btn active" data-size="normal" onclick="cambiarTamañoFuente('normal')">A</button>
-                    <button class="font-size-btn" data-size="large" onclick="cambiarTamañoFuente('large')">A</button>
-                </div>
-            </div>
-        </div>
-    `;
-    
-    document.body.appendChild(modal);
-    
-    // Actualizar valores iniciales
-    document.getElementById('theme-select').value = currentTheme;
-    actualizarBotonesTamañoFuente();
-}
-
-function mostrarPreferencias() {
-    const modal = document.getElementById('preferences-modal');
-    modal.classList.add('show');
-}
-
-function cerrarPreferencias() {
-    const modal = document.getElementById('preferences-modal');
-    modal.classList.remove('show');
-}
-
-function cambiarTema() {
-    const nuevoTema = currentTheme === 'light' ? 'dark' : 'light';
-    aplicarTema(nuevoTema);
-    localStorage.setItem('plantalingo_theme', nuevoTema);
-    
-    // Actualizar botón
-    const themeToggle = document.querySelector('.theme-toggle');
-    if (themeToggle) {
-        themeToggle.innerHTML = nuevoTema === 'light' ? '🌙 Modo Oscuro' : '☀️ Modo Claro';
-    }
-    
-    // Actualizar select en modal
-    const themeSelect = document.getElementById('theme-select');
-    if (themeSelect) {
-        themeSelect.value = nuevoTema;
-    }
-}
-
-function cambiarTemaDesdeSelect() {
-    const themeSelect = document.getElementById('theme-select');
-    const nuevoTema = themeSelect.value;
-    aplicarTema(nuevoTema);
-    localStorage.setItem('plantalingo_theme', nuevoTema);
-    
-    // Actualizar botón
-    const themeToggle = document.querySelector('.theme-toggle');
-    if (themeToggle) {
-        themeToggle.innerHTML = nuevoTema === 'light' ? '🌙 Modo Oscuro' : '☀️ Modo Claro';
-    }
-}
-
-function aplicarTema(tema) {
-    currentTheme = tema;
-    document.documentElement.setAttribute('data-theme', tema);
-}
-
-function cambiarTamañoFuente(tamaño) {
-    currentFontSize = tamaño;
-    aplicarTamañoFuente(tamaño);
-    localStorage.setItem('plantalingo_font_size', tamaño);
-    actualizarBotonesTamañoFuente();
-}
-
-function aplicarTamañoFuente(tamaño) {
-    const sizes = {
-        small: {
-            '--font-size-small': '0.8rem',
-            '--font-size-normal': '0.9rem',
-            '--font-size-large': '1.1rem',
-            '--font-size-xlarge': '1.3rem',
-            '--font-size-xxlarge': '2.5rem'
-        },
-        normal: {
-            '--font-size-small': '0.9rem',
-            '--font-size-normal': '1rem',
-            '--font-size-large': '1.2rem',
-            '--font-size-xlarge': '1.5rem',
-            '--font-size-xxlarge': '3rem'
-        },
-        large: {
-            '--font-size-small': '1rem',
-            '--font-size-normal': '1.2rem',
-            '--font-size-large': '1.4rem',
-            '--font-size-xlarge': '1.8rem',
-            '--font-size-xxlarge': '3.5rem'
-        }
-    };
-    
-    const root = document.documentElement;
-    Object.entries(sizes[tamaño]).forEach(([property, value]) => {
-        root.style.setProperty(property, value);
-    });
-}
-
-function actualizarBotonesTamañoFuente() {
-    const botones = document.querySelectorAll('.font-size-btn');
-    botones.forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.dataset.size === currentFontSize) {
-            btn.classList.add('active');
-        }
-    });
-}
-
 // Mostrar mensaje si ya completó el quiz de esta semana
 function mostrarQuizYaCompletado() {
+    const quizSemana = dataManager.obtenerQuizSemanaActual();
     const stats = dataManager.obtenerEstadisticasUsuario();
-    const quizActual = dataManager.obtenerQuizActual();
     
+    preguntaElemento.textContent = "Quiz ya completado";
+    opcionesElemento.innerHTML = "";
     resultadoElemento.innerHTML = `
         <div class="quiz-completado-mensaje">
-            <h2>✅ Quiz ya completado</h2>
-            <p>Ya has completado el quiz de esta semana.</p>
+            <h2>✅ Ya completaste el quiz de esta semana</h2>
             <div class="resultado-semana">
-                <h3>Tu resultado:</h3>
-                <p>Puntaje: ${quizActual.puntaje}/${quizActual.total} (${Math.round(quizActual.porcentaje)}%)</p>
+                <p class="puntaje-semana">Puntaje obtenido: ${quizSemana.puntaje}/5</p>
+                <p class="porcentaje-semana">(${Math.round((quizSemana.puntaje/5)*100)}%)</p>
             </div>
+            
+            <div class="estadisticas-acumuladas">
+                <h3>📊 Tu Progreso Total</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-numero">${stats.puntajeTotal}</span>
+                        <span class="stat-label">Puntaje Total</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-numero">${stats.totalQuizzes}</span>
+                        <span class="stat-label">Quizzes Completados</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-numero">${stats.promedioPuntaje}</span>
+                        <span class="stat-label">Promedio</span>
+                    </div>
+                </div>
+            </div>
+            
             <div class="acciones-quiz">
-                <button onclick="goBack()" class="btn-volver">⬅ Volver al Inicio</button>
+                <button onclick="verHistorialCompleto()" class="btn-historial">📈 Ver Historial Completo</button>
+                <button onclick="goBack()" class="btn-regresar">⬅ Volver al Inicio</button>
             </div>
         </div>
     `;
 }
 
-// Mostrar la pregunta actual
 function mostrarPregunta() {
+    if (indice >= preguntas.length) {
+        mostrarResultado();
+        return;
+    }
+
+    const actual = preguntas[indice];
+    preguntaElemento.textContent = `${actual.pregunta} (${indice + 1}/${preguntas.length})`;
+    opcionesElemento.innerHTML = "";
+
+    // Mezclar las opciones para que no siempre esté la respuesta correcta en la misma posición
+    const opcionesMezcladas = [...actual.opciones].sort(() => Math.random() - 0.5);
+
+    opcionesMezcladas.forEach(opcion => {
+        const boton = document.createElement('button');
+        boton.textContent = opcion;
+        boton.className = 'opcion-btn';
+        boton.onclick = () => validarRespuesta(opcion);
+        opcionesElemento.appendChild(boton);
+    });
+}
+
+function validarRespuesta(opcionSeleccionada) {
+    const preguntaActual = preguntas[indice];
+    const esCorrecta = opcionSeleccionada === preguntaActual.respuesta;
+
+    if (esCorrecta) {
+        puntaje++;
+    }
+
+    respuestasUsuario.push({
+        pregunta: preguntaActual.pregunta,
+        seleccion: opcionSeleccionada,
+        correcta: preguntaActual.respuesta,
+        esCorrecta: esCorrecta,
+        categoria: preguntaActual.categoria,
+        dificultad: preguntaActual.dificultad
+    });
+
+    indice++;
+
     if (indice < preguntas.length) {
-        const pregunta = preguntas[indice];
-        preguntaElemento.textContent = pregunta.pregunta;
-        
-        opcionesElemento.innerHTML = '';
-        pregunta.opciones.forEach((opcion, i) => {
-            const boton = document.createElement('button');
-            boton.className = 'opcion-btn';
-            boton.textContent = opcion;
-            boton.onclick = () => validarRespuesta(opcion);
-            opcionesElemento.appendChild(boton);
-        });
+        mostrarPregunta();
     } else {
         mostrarResultado();
     }
 }
 
-// Validar respuesta del usuario
-function validarRespuesta(opcionSeleccionada) {
-    const pregunta = preguntas[indice];
-    const esCorrecta = opcionSeleccionada === pregunta.respuesta_correcta;
-    
-    if (esCorrecta) {
-        puntaje++;
-    }
-    
-    respuestasUsuario.push({
-        pregunta: pregunta.pregunta,
-        seleccion: opcionSeleccionada,
-        correcta: pregunta.respuesta_correcta,
-        categoria: pregunta.categoria
-    });
-    
-    indice++;
-    mostrarPregunta();
-}
-
-// Mostrar resultado final
 function mostrarResultado() {
+    preguntaElemento.textContent = "¡Quiz finalizado!";
+    opcionesElemento.innerHTML = "";
+    
     const porcentaje = Math.round((puntaje / preguntas.length) * 100);
-    const mensaje = porcentaje >= 80 ? '¡Excelente trabajo!' : 
-                   porcentaje >= 60 ? '¡Buen trabajo!' : 
-                   porcentaje >= 40 ? '¡Sigue practicando!' : '¡No te rindas!';
+    let mensaje = "";
     
+    if (porcentaje === 100) {
+        mensaje = "🎉 ¡Perfecto! Todas tus respuestas fueron correctas.";
+    } else if (porcentaje >= 80) {
+        mensaje = "👏 ¡Excelente! Muy buen conocimiento sobre educación ambiental.";
+    } else if (porcentaje >= 60) {
+        mensaje = "👍 ¡Buen trabajo! Sigue aprendiendo sobre el medio ambiente.";
+    } else {
+        mensaje = "📚 ¡Sigue estudiando! La educación ambiental es importante.";
+    }
+
+    // Obtener estadísticas actualizadas
     const stats = dataManager.obtenerEstadisticasUsuario();
-    const puntajeTotal = stats.puntajeTotal + puntaje;
-    const quizzesCompletados = stats.quizzesCompletados + 1;
-    
+    const nuevoPuntajeTotal = stats.puntajeTotal + puntaje;
+
     resultadoElemento.innerHTML = `
         <div class="resultado-final">
-            <h2>🎉 Quiz Completado</h2>
-            <div class="puntaje">${puntaje}/${preguntas.length}</div>
-            <div class="mensaje">${mensaje}</div>
+            <h2>Resultado del Quiz</h2>
+            <p class="puntaje">Obtuviste ${puntaje} de ${preguntas.length} respuestas correctas (${porcentaje}%)</p>
+            <p class="mensaje">${mensaje}</p>
+            
             <div class="puntaje-acumulado">
-                <h3>Puntaje Total</h3>
+                <h3>🏆 Puntaje Acumulado</h3>
                 <div class="puntaje-info">
-                    <p>Esta semana: ${puntaje} puntos</p>
-                    <p>Total acumulado: ${puntajeTotal} puntos</p>
+                    <p><strong>Esta semana:</strong> +${puntaje} puntos</p>
+                    <p><strong>Total acumulado:</strong> ${nuevoPuntajeTotal} puntos</p>
+                    <p><strong>Quizzes completados:</strong> ${stats.totalQuizzes + 1}</p>
                 </div>
             </div>
-        </div>
-        <div class="acciones-quiz">
-            <button onclick="goBack()" class="btn-volver">⬅ Volver al Inicio</button>
+            
+            <div class="estadisticas">
+                <h3>Estadísticas por Categoría:</h3>
+                ${generarEstadisticasCategoria()}
+            </div>
         </div>
     `;
-    
-    // Guardar resultado
-    dataManager.guardarResultadoQuiz({
-        puntaje: puntaje,
-        total: preguntas.length,
-        porcentaje: porcentaje,
-        respuestas: respuestasUsuario,
-        fecha: new Date().toISOString()
-    });
-}
 
-// Función para ir al inicio
-function goBack() {
-    window.location.href = 'index.html';
-}
+    // Mostrar respuestas incorrectas
+    const incorrectas = respuestasUsuario.filter(r => !r.esCorrecta);
+    if (incorrectas.length > 0) {
+        resultadoElemento.innerHTML += `
+            <div class="respuestas-incorrectas">
+                <h3>Respuestas incorrectas:</h3>
+                ${incorrectas.map(r => `
+                    <div class="error">
+                        <p><strong>❌ Pregunta:</strong> ${r.pregunta}</p>
+                        <p><strong>Tu respuesta:</strong> ${r.seleccion}</p>
+                        <p><strong>Respuesta correcta:</strong> ${r.correcta}</p>
+                        <p><strong>Categoría:</strong> ${traducirCategoria(r.categoria)}</p>
+                    </div>
+                `).join("")}
+            </div>
+        `;
+    }
 
-// Mostrar error
-function mostrarError(mensaje) {
-    opcionesElemento.innerHTML = "";
-    resultadoElemento.innerHTML = `
-        <div class="error">
-            <p>❌ ${mensaje}</p>
-            <p>Intenta recargar la página o vuelve más tarde.</p>
+    // Guardar resultado en localStorage
+    if (dataManager) {
+        dataManager.guardarResultadoQuiz({
+            puntaje: puntaje,
+            total: preguntas.length,
+            porcentaje: porcentaje,
+            respuestas: respuestasUsuario
+        });
+    }
+
+    // Agregar botones de acción
+    resultadoElemento.innerHTML += `
+        <div class="acciones-quiz">
+            <button onclick="verHistorialCompleto()" class="btn-historial">📈 Ver Historial Completo</button>
             <button onclick="goBack()" class="btn-regresar">⬅ Volver al Inicio</button>
         </div>
     `;
 }
 
-// Cerrar modal al hacer clic fuera
-document.addEventListener('click', function(event) {
-    const modal = document.getElementById('preferences-modal');
-    if (event.target === modal) {
-        cerrarPreferencias();
-    }
-});
+function generarEstadisticasCategoria() {
+    const estadisticas = {};
+    
+    respuestasUsuario.forEach(respuesta => {
+        if (!estadisticas[respuesta.categoria]) {
+            estadisticas[respuesta.categoria] = { correctas: 0, total: 0 };
+        }
+        estadisticas[respuesta.categoria].total++;
+        if (respuesta.esCorrecta) {
+            estadisticas[respuesta.categoria].correctas++;
+        }
+    });
 
-// Inicializar el quiz cuando se carga el DOM
+    return Object.entries(estadisticas).map(([categoria, stats]) => {
+        const porcentaje = Math.round((stats.correctas / stats.total) * 100);
+        return `
+            <div class="categoria-stats">
+                <span class="categoria-nombre">${traducirCategoria(categoria)}:</span>
+                <span class="categoria-puntaje">${stats.correctas}/${stats.total} (${porcentaje}%)</span>
+            </div>
+        `;
+    }).join("");
+}
+
+function traducirCategoria(categoria) {
+    const traducciones = {
+        'flora_nativa': 'Flora Nativa',
+        'conservacion': 'Conservación',
+        'conceptos_basicos': 'Conceptos Básicos',
+        'ecosistemas': 'Ecosistemas',
+        'problemas_ambientales': 'Problemas Ambientales',
+        'acciones_sostenibles': 'Acciones Sostenibles',
+        'procesos_naturales': 'Procesos Naturales',
+        'cambio_climatico': 'Cambio Climático',
+        'recursos_naturales': 'Recursos Naturales',
+        'energia': 'Energía',
+        'areas_protegidas': 'Áreas Protegidas',
+        'fauna_nativa': 'Fauna Nativa',
+        'agricultura_sostenible': 'Agricultura Sostenible',
+        'geografia_chile': 'Geografía de Chile',
+        'oceanos': 'Océanos',
+        'bosques': 'Bosques',
+        'contaminacion': 'Contaminación',
+        'transporte': 'Transporte',
+        'educacion': 'Educación',
+        'turismo': 'Turismo',
+        'sostenibilidad': 'Sostenibilidad'
+    };
+    
+    return traducciones[categoria] || categoria;
+}
+
+function verHistorialCompleto() {
+    if (!dataManager) return;
+    
+    const historial = dataManager.obtenerHistorialQuiz();
+    const progreso = dataManager.obtenerProgresoSemanal();
+    
+    let historialHTML = "";
+    if (historial.length > 0) {
+        historialHTML = `
+            <h3>Historial de Quizzes:</h3>
+            <div class="historial">
+                ${historial.map(r => `
+                    <div class="historial-item">
+                        <span>Semana ${r.semana} - ${new Date(r.fecha).toLocaleDateString('es-CL')}</span>
+                        <span>${r.puntaje}/${r.total} (${Math.round((r.puntaje/r.total)*100)}%)</span>
+                    </div>
+                `).join("")}
+            </div>
+        `;
+    }
+    
+    let progresoHTML = "";
+    const semanasCompletadas = progreso.filter(p => p.completada);
+    if (semanasCompletadas.length > 0) {
+        progresoHTML = `
+            <h3>Progreso Semanal:</h3>
+            <div class="progreso-semanal">
+                <p>Has completado ${semanasCompletadas.length} de las ${dataManager.semanaActual} semanas del año</p>
+                <div class="progreso-barras">
+                    ${semanasCompletadas.slice(-10).map(p => `
+                        <div class="semana-barra" title="Semana ${p.semana}: ${p.puntaje}/5">
+                            <div class="barra-puntaje" style="height: ${(p.puntaje/5)*100}%"></div>
+                        </div>
+                    `).join("")}
+                </div>
+            </div>
+        `;
+    }
+    
+    resultadoElemento.innerHTML = `
+        <div class="historial-completo">
+            <h2>📊 Historial Completo</h2>
+            ${historialHTML}
+            ${progresoHTML}
+            <button onclick="mostrarResultado()" class="btn-volver">⬅ Volver al Resultado</button>
+        </div>
+    `;
+}
+
+function mostrarError(mensaje) {
+    preguntaElemento.textContent = "Error";
+    opcionesElemento.innerHTML = "";
+    resultadoElemento.innerHTML = `
+        <div class="error-mensaje">
+            <p>❌ ${mensaje}</p>
+            <button onclick="inicializarQuiz()" class="btn-reintentar">🔄 Reintentar</button>
+            <button onclick="goBack()" class="btn-regresar">⬅ Volver al Inicio</button>
+        </div>
+    `;
+}
+
+function goBack() {
+    window.location.href = "index.html";
+}
+
+// Inicializar el quiz cuando se carga la página
 document.addEventListener('DOMContentLoaded', inicializarQuiz);

@@ -1,19 +1,11 @@
 // Script.js - Manejo de la página principal de Plantalingo
 let dataManager;
-let currentTheme = 'light';
-let currentFontSize = 'normal';
 
 // Inicializar la página principal
 async function inicializarPagina() {
     try {
-        // Cargar preferencias del usuario
-        cargarPreferenciasUsuario();
-        
         // Crear instancia del DataManager
         dataManager = new DataManager();
-        
-        // Mostrar skeleton loaders mientras se cargan los datos
-        mostrarSkeletonLoaders();
         
         // Cargar datos
         const datosCargados = await dataManager.cargarDatos();
@@ -22,9 +14,6 @@ async function inicializarPagina() {
             // Verificar que los datos del usuario se mantengan
             const stats = dataManager.obtenerEstadisticasUsuario();
             console.log('Estadísticas del usuario cargadas:', stats);
-            
-            // Ocultar skeleton loaders y mostrar contenido
-            ocultarSkeletonLoaders();
             
             // Mostrar información de la semana actual
             mostrarInfoSemana();
@@ -38,228 +27,11 @@ async function inicializarPagina() {
             
             console.log('Página inicializada exitosamente');
         } else {
-            ocultarSkeletonLoaders();
             mostrarError('Error al cargar los datos');
         }
     } catch (error) {
         console.error('Error al inicializar página:', error);
-        ocultarSkeletonLoaders();
         mostrarError('Error al cargar la página');
-    }
-}
-
-// Sistema de preferencias de usuario
-function cargarPreferenciasUsuario() {
-    // Cargar tema
-    const temaGuardado = localStorage.getItem('plantalingo_theme') || 'light';
-    aplicarTema(temaGuardado);
-    
-    // Cargar tamaño de fuente
-    const fontSizeGuardado = localStorage.getItem('plantalingo_font_size') || 'normal';
-    aplicarTamañoFuente(fontSizeGuardado);
-    
-    // Crear controles de tema
-    crearControlesTema();
-}
-
-function crearControlesTema() {
-    // Crear contenedor de controles
-    const themeControls = document.createElement('div');
-    themeControls.className = 'theme-controls';
-    
-    // Botón de cambio de tema
-    const themeToggle = document.createElement('button');
-    themeToggle.className = 'theme-toggle';
-    themeToggle.innerHTML = currentTheme === 'light' ? '🌙 Modo Oscuro' : '☀️ Modo Claro';
-    themeToggle.onclick = cambiarTema;
-    
-    // Botón de preferencias
-    const preferencesBtn = document.createElement('button');
-    preferencesBtn.className = 'preferences-btn';
-    preferencesBtn.innerHTML = '⚙️';
-    preferencesBtn.onclick = mostrarPreferencias;
-    
-    themeControls.appendChild(themeToggle);
-    themeControls.appendChild(preferencesBtn);
-    
-    // Insertar al inicio del body
-    document.body.insertBefore(themeControls, document.body.firstChild);
-    
-    // Crear modal de preferencias
-    crearModalPreferencias();
-}
-
-function crearModalPreferencias() {
-    const modal = document.createElement('div');
-    modal.className = 'preferences-modal';
-    modal.id = 'preferences-modal';
-    
-    modal.innerHTML = `
-        <div class="preferences-content">
-            <div class="preferences-header">
-                <h2>Preferencias</h2>
-                <button class="close-btn" onclick="cerrarPreferencias()">&times;</button>
-            </div>
-            <div class="preference-item">
-                <label for="theme-select">Tema:</label>
-                <select id="theme-select" class="preference-control" onchange="cambiarTemaDesdeSelect()">
-                    <option value="light">Claro</option>
-                    <option value="dark">Oscuro</option>
-                </select>
-            </div>
-            <div class="preference-item">
-                <label>Tamaño de fuente:</label>
-                <div class="font-size-controls">
-                    <button class="font-size-btn" data-size="small" onclick="cambiarTamañoFuente('small')">A</button>
-                    <button class="font-size-btn active" data-size="normal" onclick="cambiarTamañoFuente('normal')">A</button>
-                    <button class="font-size-btn" data-size="large" onclick="cambiarTamañoFuente('large')">A</button>
-                </div>
-            </div>
-        </div>
-    `;
-    
-    document.body.appendChild(modal);
-    
-    // Actualizar valores iniciales
-    document.getElementById('theme-select').value = currentTheme;
-    actualizarBotonesTamañoFuente();
-}
-
-function mostrarPreferencias() {
-    const modal = document.getElementById('preferences-modal');
-    modal.classList.add('show');
-}
-
-function cerrarPreferencias() {
-    const modal = document.getElementById('preferences-modal');
-    modal.classList.remove('show');
-}
-
-function cambiarTema() {
-    const nuevoTema = currentTheme === 'light' ? 'dark' : 'light';
-    aplicarTema(nuevoTema);
-    localStorage.setItem('plantalingo_theme', nuevoTema);
-    
-    // Actualizar botón
-    const themeToggle = document.querySelector('.theme-toggle');
-    if (themeToggle) {
-        themeToggle.innerHTML = nuevoTema === 'light' ? '🌙 Modo Oscuro' : '☀️ Modo Claro';
-    }
-    
-    // Actualizar select en modal
-    const themeSelect = document.getElementById('theme-select');
-    if (themeSelect) {
-        themeSelect.value = nuevoTema;
-    }
-}
-
-function cambiarTemaDesdeSelect() {
-    const themeSelect = document.getElementById('theme-select');
-    const nuevoTema = themeSelect.value;
-    aplicarTema(nuevoTema);
-    localStorage.setItem('plantalingo_theme', nuevoTema);
-    
-    // Actualizar botón
-    const themeToggle = document.querySelector('.theme-toggle');
-    if (themeToggle) {
-        themeToggle.innerHTML = nuevoTema === 'light' ? '🌙 Modo Oscuro' : '☀️ Modo Claro';
-    }
-}
-
-function aplicarTema(tema) {
-    currentTheme = tema;
-    document.documentElement.setAttribute('data-theme', tema);
-}
-
-function cambiarTamañoFuente(tamaño) {
-    currentFontSize = tamaño;
-    aplicarTamañoFuente(tamaño);
-    localStorage.setItem('plantalingo_font_size', tamaño);
-    actualizarBotonesTamañoFuente();
-}
-
-function aplicarTamañoFuente(tamaño) {
-    const sizes = {
-        small: {
-            '--font-size-small': '0.8rem',
-            '--font-size-normal': '0.9rem',
-            '--font-size-large': '1.1rem',
-            '--font-size-xlarge': '1.3rem',
-            '--font-size-xxlarge': '2.5rem'
-        },
-        normal: {
-            '--font-size-small': '0.9rem',
-            '--font-size-normal': '1rem',
-            '--font-size-large': '1.2rem',
-            '--font-size-xlarge': '1.5rem',
-            '--font-size-xxlarge': '3rem'
-        },
-        large: {
-            '--font-size-small': '1.2rem',
-            '--font-size-normal': '1.4rem',
-            '--font-size-large': '1.6rem',
-            '--font-size-xlarge': '2rem',
-            '--font-size-xxlarge': '4rem'
-        }
-    };
-    
-    const root = document.documentElement;
-    Object.entries(sizes[tamaño]).forEach(([property, value]) => {
-        root.style.setProperty(property, value);
-    });
-}
-
-function actualizarBotonesTamañoFuente() {
-    const botones = document.querySelectorAll('.font-size-btn');
-    botones.forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.dataset.size === currentFontSize) {
-            btn.classList.add('active');
-        }
-    });
-}
-
-// Animaciones de carga - Skeleton Loaders
-function mostrarSkeletonLoaders() {
-    const container = document.getElementById('articulos-container');
-    if (!container) return;
-    
-    let html = '';
-    
-    // Skeleton para artículos
-    for (let i = 0; i < 3; i++) {
-        html += `
-            <div class="skeleton-card">
-                <div class="skeleton-image"></div>
-                <div class="skeleton-title"></div>
-                <div class="skeleton-text"></div>
-                <div class="skeleton-text"></div>
-                <div class="skeleton-text"></div>
-                <div class="skeleton-text" style="width: 60%;"></div>
-            </div>
-        `;
-    }
-    
-    // Skeleton para dato curioso
-    html += `
-        <div class="skeleton-card">
-            <div class="skeleton-image"></div>
-            <div class="skeleton-title"></div>
-            <div class="skeleton-text"></div>
-            <div class="skeleton-text"></div>
-            <div class="skeleton-text"></div>
-            <div class="skeleton-text"></div>
-            <div class="skeleton-text" style="width: 70%;"></div>
-        </div>
-    `;
-    
-    container.innerHTML = html;
-}
-
-function ocultarSkeletonLoaders() {
-    const container = document.getElementById('articulos-container');
-    if (container) {
-        container.innerHTML = '';
     }
 }
 
@@ -448,5 +220,5 @@ function goToQuiz() {
     window.location.href = "quiz.html";
 }
 
-// Inicializar la página cuando se carga el DOM
+// Inicializar la página cuando se carga
 document.addEventListener('DOMContentLoaded', inicializarPagina);
